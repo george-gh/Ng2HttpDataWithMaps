@@ -1,0 +1,70 @@
+<div>
+    <h3>Edit user</h3>
+    <form (ngSubmit)="onFormSubmit()" [ngFormModel]="userForm">
+        <div class="user-name">
+            <label for="name">Name</label>
+            <input type="text" id="name">
+        </div>
+        <div class="user-username">
+            <label for="username">Username</label>
+            <input type="text" id="username">
+        </div>
+        <div class="user-email">
+            <label for="email">Email</label>
+            <input type="text" id="email">
+        </div>
+        <div class="user-phone">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone">
+        </div>
+        <div class="user-website">
+            <label for="website">Website</label>
+            <input type="text" id="website">
+        </div>
+        <div class="user-name">
+            <label for="name">Company</label>
+            <div class="company-name">
+                <label for="company-name">Name</label>
+                <input type="text" id="company-name">
+            </div>
+            <div class="company-catchphrase">
+                <label for="company-catchphrase">Catchphrase</label>
+                <input type="text" id="company-catchphrase">
+            </div>
+            <div class="company-bs">
+                <label for="company-bs">Bs</label>
+                <input type="text" id="company-bs">
+            </div>
+        </div>
+        <div class="user-address">
+            <label>Address</label>
+            <div class="user-street">
+                <label for="address-street">Street</label>
+                <input type="text" id="address-street">
+            </div>
+            <div class="user-suite">
+                <label for="address-suite">Suite</label>
+                <input type="text" id="address-suite">
+            </div>
+            <div class="user-city">
+                <label for="address-city">City</label>
+                <input type="text" id="address-city">
+            </div>
+            <div class="user-zipcode">
+                <label for="address-zipcode">Zipcode</label>
+                <input type="text" id="address-zipcode">
+            </div>
+            <div class="user-address-geo">
+                <label>Geo</label>
+                <div class="user-lat">
+                    <label for="geo-lat">Latitude</label>
+                    <input type="text" id="geo-lat">
+                </div>
+                <div class="user-lng">
+                    <label for="geo-lng">Longitude</label>
+                    <input type="text" id="geo-lng">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

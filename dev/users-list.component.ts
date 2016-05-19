@@ -9,7 +9,10 @@ import {UserDetailsComponent} from './user-details.component';
         <div>
             <h2>User list</h2>
             <ul>
-                <li *ngFor="let user of users" class="user-element" [class.selected]="user == selectedUser" (click)="onSelectUser(user)">
+                <li *ngFor="let user of users" 
+                    class="user-element" 
+                    [class.selected]="user == selectedUser" 
+                    (click)="onSelectUser(user)">
                     {{user.name}}
                 </li>
             </ul>
@@ -31,9 +34,7 @@ export class UserListComponent implements OnInit {
     
      ngOnInit() { 
          this.userService.getUsers().subscribe(
-                                                data => {
-                                                    this.users = data;
-                                                },
+                                                data => this.users = data,
                                                 error => console.error('Error: ', error));
      }
      
