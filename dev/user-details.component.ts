@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {User} from './models/user';
+import {Geo} from './models/geo';
 import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
 
 @Component({
@@ -13,9 +14,11 @@ import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
                 <li>Username: {{currentUser.username}}</li>
                 <li>Phone: {{currentUser.phone}}</li>
                 <li>WebSite: {{currentUser.website}}</li>
+                <p *ngIf="clickCoords">Click on ({{clickCoords.lat}}:{{clickCoords.lng}})</p>
                 <sebm-google-map [latitude]="currentUser.geo.lat" 
                                     [longitude]="currentUser.geo.lng"
-                                    [zoom]="11">
+                                    [zoom]="11"
+                                    (mapClick)="onMapClick($event)">
                 </sebm-google-map>
             </ul>
         </div>
@@ -30,9 +33,14 @@ import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
 export class UserDetailsComponent implements OnInit {
     
     @Input() currentUser: User;
+    clickCoords: Geo;
     
     constructor() { }
 
     ngOnInit() { }
+    
+    onMapClick(event: any) {
+        this.clickCoords = event.coords;
+    }
 
 }
