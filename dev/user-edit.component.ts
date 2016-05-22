@@ -20,7 +20,7 @@ export class UserEditComponent implements OnInit {
         this.userForm = this.fb.group({
             'name': ['', Validators.required],
             'username': ['', Validators.required],
-            'email': ['', Validators.required],
+            'email': ['', Validators.compose([Validators.required, validEmail])],
             'phone': ['', onlyNumbers],
             'website': ['', validWebsite],
             'geo': this.fb.group({
@@ -66,4 +66,10 @@ function validLocation(c:Control):{[s:string]: boolean} {
     let coordRegex = /^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}/;
     if (!coordRegex.test(c.value))
         return {validLocation: false};
+}
+
+function validEmail(c:Control):{[s:string]: boolean} {
+    let emailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!emailRegex.test(c.value))
+        return {validEmail: false}
 }

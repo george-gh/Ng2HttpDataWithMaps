@@ -4,18 +4,18 @@
         <div class="user-name">
             <label for="name">Name</label>
             <input type="text" id="name" [ngFormControl]="userForm.controls['name']" #name="ngForm">
-            <span class="warning" *ngIf="!name.valid && name.dirty">Name is required</span>
+            <span class="warning" *ngIf="name.value == '' && name.dirty">Name is required</span>
         </div>
         <div class="user-username">
             <label for="username">Username</label>
             <input type="text" id="username" [ngFormControl]="userForm.controls['username']" #username="ngForm">
-            <span class="warning" *ngIf="!username.valid && username.dirty">Username is required</span>
+            <span class="warning" *ngIf="username.value == '' && username.dirty">Username is required</span>
         </div>
         <div class="user-email">
             <label for="email">Email</label>
             <input type="text" id="email" [ngFormControl]="userForm.controls['email']" #email="ngForm">
-            <span class="warning" *ngIf="!email.valid && email.dirty">Email is required</span>
-            <span class="warning" *ngIf="!email.valid && email.dirty">Invalid email address</span>
+            <span class="warning" *ngIf="email.value == '' && email.dirty">Email is required</span>
+            <span class="warning" *ngIf="!email.valid && email.dirty && email.value !== ''">Invalid email address</span>
         </div>
         <div class="user-phone">
             <label for="phone">Phone</label>

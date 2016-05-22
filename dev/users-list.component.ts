@@ -34,7 +34,10 @@ export class UserListComponent implements OnInit {
     
      ngOnInit() { 
          this.userService.getUsers().subscribe(
-                                                data => this.users = data,
+                                                data => {
+                                                    console.log("Getting data: ", data);
+                                                    this.users = Object.keys(data).map(function(key) {return data[key]});
+                                                },
                                                 error => console.error('Error: ', error));
      }
      
