@@ -15,7 +15,7 @@ import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
                 <li>WebSite: {{currentUser.website}}</li>
                 <sebm-google-map [latitude]="currentUser.geo.lat" 
                                     [longitude]="currentUser.geo.lng"
-                                    [zoom]="5">
+                                    [zoom]="11">
                 </sebm-google-map>
             </ul>
         </div>

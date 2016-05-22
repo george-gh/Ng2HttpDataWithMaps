@@ -7,6 +7,7 @@ import {MainMenuComponent} from './main-menu.component';
 @Component({
     selector: 'my-app',
     template: `
+        <main-menu></main-menu>
         <h1>HTTP Data</h1>
         <user-list></user-list>
         <user-edit></user-edit>
