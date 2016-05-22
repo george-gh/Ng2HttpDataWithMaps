@@ -1,13 +1,15 @@
-import {Address} from './address';
-import {Company} from './company';
+//import {Address} from './address';
+//import {Company} from './company';
+import {Geo} from './geo';
 
 export class User {
-    id: number;
+    // id: number;
     name: string;
     username: string;
     email: string;
-    address: Address;
+    // address: Address;
     phone: string;
     website: string;
-    company: Company;
+    // company: Company;
+    geo: Geo
 }

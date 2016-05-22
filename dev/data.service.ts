@@ -3,18 +3,23 @@ import {Http, Response, Headers} from '@angular/http';
 import {User} from './models/user';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Injectable()
 export class DataService {
     
-    // userUrl: string = 'http://jsonplaceholder.typicode.com/users';
-    userUrl: string = 'https://test-1edc7.firebaseio.com/users.json';
+    userUrl: string = '';
     
-    constructor(private http: Http) {}
+    constructor(private http: Http, private firebase: AngularFire) {}
     
     getUsers(): Observable<any> {
+        return this.firebase.database.list('/users');
+        /*
         return this.http.get(this.userUrl)
-             .map( (res: Response) => res.json() );  
+             .map( (res: Response) => {
+                        let data = res.json();
+                    } );
+                    */
     }
     
     addUser(user: User): Observable<any> {

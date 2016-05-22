@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
+// import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {UserListComponent} from './users-list.component';
 import {UserEditComponent} from './user-edit.component';
+import {MainMenuComponent} from './main-menu.component';
  
 @Component({
     selector: 'my-app',
@@ -9,9 +11,9 @@ import {UserEditComponent} from './user-edit.component';
         <user-list></user-list>
         <user-edit></user-edit>
     `,
-    directives: [UserListComponent, UserEditComponent]
+    directives: [UserListComponent, UserEditComponent, MainMenuComponent]
 })
 export class AppComponent {
-    
+     
     
 }
