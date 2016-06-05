@@ -8,12 +8,14 @@ import {Observable} from 'rxjs/Observable';
 export class DataService {
     
     userUrl: string = '';
+    // userUrl: string = './data/users.json';
     
     constructor(private http: Http) {}
     
-    getUsers(): Observable<any> {
+    getUsers(): any {
         return this.http.get(this.userUrl)
                             .map( (res: Response) => res.json() );
+        return null;
     }
     
     addUser(user: User): Observable<any> {

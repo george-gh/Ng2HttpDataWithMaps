@@ -1,45 +1,45 @@
 <div>
     <h3>Edit user</h3>
-    <form (ngSubmit)="onFormSubmit()" [ngFormModel]="userForm">
-        <div class="user-name">
+    <form (ngSubmit)="onFormSubmit()" [ngFormModel]="userForm" class="add-user-form">
+        <div class="formElement user-name">
             <label for="name">Name</label>
             <input type="text" id="name" [ngFormControl]="userForm.controls['name']" #name="ngForm">
             <span class="warning" *ngIf="name.value == '' && name.dirty">Name is required</span>
         </div>
-        <div class="user-username">
+        <div class="formElement user-username">
             <label for="username">Username</label>
             <input type="text" id="username" [ngFormControl]="userForm.controls['username']" #username="ngForm">
             <span class="warning" *ngIf="username.value == '' && username.dirty">Username is required</span>
         </div>
-        <div class="user-email">
+        <div class="formElement user-email">
             <label for="email">Email</label>
             <input type="text" id="email" [ngFormControl]="userForm.controls['email']" #email="ngForm">
             <span class="warning" *ngIf="email.value == '' && email.dirty">Email is required</span>
             <span class="warning" *ngIf="!email.valid && email.dirty && email.value !== ''">Invalid email address</span>
         </div>
-        <div class="user-phone">
+        <div class="formElement user-phone">
             <label for="phone">Phone</label>
             <input type="text" id="phone" [ngFormControl]="userForm.controls['phone']" #phone="ngForm">
             <span class="warning" *ngIf="!phone.valid && phone.dirty" >Invalid phone number</span>
         </div>
-        <div class="user-website">
+        <div class="formElement user-website">
             <label for="website">Website</label>
             <input type="text" id="website" [ngFormControl]="userForm.controls['website']" #website="ngForm">
             <span class="warning" *ngIf="!website.valid && website.dirty">Invalid website</span>
         </div>
-        <div class="user-address-geo">
+        <div class="formElement user-address-geo">
             <label>Geo</label>
-            <div class="user-lat">
+            <div class="formElement nested user-lat">
                 <label for="geo-lat">Latitude</label>
                 <input type="text" id="geo-lat" [ngFormControl]="userForm.controls['geo'].controls['lat']" #lat="ngForm">
                 <span class="warning" *ngIf="!lat.valid && lat.dirty">Invalid coordinate</span>
             </div>
-            <div class="user-lng">
+            <div class="formElement nested user-lng">
                 <label for="geo-lng">Longitude</label>
                 <input type="text" id="geo-lng" [ngFormControl]="userForm.controls['geo'].controls['lng']" #lng="ngForm">
                 <span class="warning" *ngIf="!lng.valid && lng.dirty">Invalid coordinate</span>
             </div>
         </div>
-        <button type="submit">Create</button>
+        <button type="submit" class="submitBtn">Create</button>
     </form>
 </div>

@@ -7,6 +7,7 @@ import {User} from './models/user';
     moduleId: module.id,
     selector: 'user-edit',
     templateUrl: '/templates/edit-user.tpl.html',
+    styleUrls: ['../dev/stylesheets/edit-user.css'],
     directives: [FORM_DIRECTIVES],
     providers: [DataService]
 })

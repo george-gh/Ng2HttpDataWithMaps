@@ -37,9 +37,10 @@ export class UserListComponent implements OnInit {
                                                 data => {
                                                     console.log("Getting data: ", data);
                                                     this.users = Object.keys(data).map(function(key) {return data[key]});
+                                                    // this.users = data;
                                                 },
-                                                error => console.error('Error: ', error));
-     }
+                                                error => console.error('Error: ', error)); 
+    }
      
      onSelectUser(uu: User) {
          this.selectedUser = uu;
